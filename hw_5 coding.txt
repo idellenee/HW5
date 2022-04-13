@@ -1,0 +1,55 @@
+Console.WriteLine("/////Homework 5/////");
+string name, gender, ID, a, correction;
+int date;
+        Console.WriteLine("\nPlease enter your name: ");
+        name = Console.ReadLine();
+        Console.WriteLine("Please enter your gender (Male/Female): ");
+        gender = Console.ReadLine();
+        Console.WriteLine("Please enter your birthday (YYYYMMDD): ");
+        date = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Please enter your ID: ");
+        ID = Console.ReadLine();
+do
+{
+        Console.WriteLine("\n------------------------------------------------------");
+        Console.WriteLine("Please check your information before submitting: ");
+        Console.WriteLine("Your name is " + name);
+        Console.WriteLine("Your gender is " + gender);
+        Console.WriteLine("Your birthday is " + date);
+        Console.WriteLine("Your student ID is " + ID);
+        Console.WriteLine("--------------------------------------------------------");
+        Console.WriteLine("To finish, please type 1. For edit, please type 2");
+        Console.WriteLine("--------------------------------------------------------");
+
+        a = Console.ReadLine();
+        if (a == "2")
+        {
+            Console.WriteLine("\nWhich information that you want to edit (name/gender/birthday/student ID): ");
+            correction = Console.ReadLine();
+
+                switch(correction)
+                {
+                    case "name":
+                        Console.Write("\nPlease re-enter your name: ");
+                        name = Console.ReadLine();
+                        continue;
+                    case "gender":
+                        Console.Write("\nPlease re-enter your gender: ");
+                        gender = Console.ReadLine();
+                        continue;
+                    case "birthday":
+                        Console.WriteLine("\nPlease re-enter your date (YYYYMMDD): ");
+                        date = Convert.ToInt32(Console.ReadLine());
+                        continue;
+                    case "ID":
+                        Console.WriteLine("\nPlease re-enter your student ID: ");
+                        ID = Console.ReadLine();
+                        continue;
+                    default:
+                        Console.Write("\nSorry, we don't have this kind of information");
+                        Console.WriteLine();
+                        break;
+                }
+        }
+}while(a == "2");
+Console.WriteLine("\nThank you for filling this form! ^^");
